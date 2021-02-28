@@ -1,0 +1,13 @@
+To use the apple sample. First download and unzip it from https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture
+
+
+Create a new empty app.
+
+Edit your ViewController.swift to have the same contents as the apple one
+Copy the VisionObjectRecognitionViewController.swift file from their project to yours
+In Main.storyboard, change the name of the View to Preview View
+In Main.storyboard, change the name of the class to VisionObjectRecognitionViewController
+In Main.storyboard, create an outlet from Preview View to ViewController and call it previewView
+Delete the code in ViewController.swift that was previously doing the outlet
+Edit Info.plist and add a ‘Privacy - Camera Usage Description’ node with some text describing your app
+Add the ObjectDetector.mlmodel from the apple sample to yours, and it should work now!
