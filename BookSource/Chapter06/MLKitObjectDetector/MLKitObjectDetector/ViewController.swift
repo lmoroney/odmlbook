@@ -1,20 +1,20 @@
 //
 //  ViewController.swift
-//  Chapter6ObjectDetection
+//  MLKitObjectDetector
 //
-//  Created by Laurence Moroney on 2/22/21.
+//  Created by Laurence Moroney on 2/28/21.
 //
 
 import UIKit
 import MLKitVision
 import MLKitObjectDetection
+
 class ViewController: UIViewController {
-
     @IBOutlet weak var imageView: UIImageView!
-
-    @IBAction func btnPressed(_ sender: Any) {
+    @IBAction func doObjectDetection(_ sender: Any) {
         runObjectDetection(with: imageView.image!)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,7 +25,9 @@ class ViewController: UIViewController {
           annotationOverlayView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
           annotationOverlayView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
           annotationOverlayView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-        ])    }
+        ])
+        
+    }
 
     /// An overlay view that displays detection annotations.
     private lazy var annotationOverlayView: UIView = {
@@ -54,6 +56,7 @@ class ViewController: UIViewController {
         guard let detectedObjects = detectedObjects else{
             return
         }
+        
         for obj in detectedObjects{
             let transform = self.transformMatrix()
             let transformedRect = obj.frame.applying(transform)
@@ -99,7 +102,5 @@ class ViewController: UIViewController {
 
         view.addSubview(rectangleView)
     }
-
-
 }
 
