@@ -3,6 +3,6 @@ platform :ios, '10.0'
 use_frameworks!
 
 
-target 'Chapter6ImageLabelling' do
+target 'MLKitImageClassifier' do
         pod 'GoogleMLKit/ImageLabeling'
 end

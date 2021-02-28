@@ -1,7 +1,9 @@
 //
 //  ViewController.swift
-//  Chapter6ImageLabelling
-
+//  MLKitImageClassifier
+//
+//  Created by Laurence Moroney on 2/28/21.
+//
 
 import UIKit
 // Import the MLKit Vision and Image Labeling libraries
@@ -9,26 +11,20 @@ import MLKitVision
 import MLKitImageLabeling
 
 class ViewController: UIViewController {
-    // Outlet for image view, so we can read the image
+
     @IBOutlet weak var imageView: UIImageView!
-    // Outlet for the output label so we can write to it
     @IBOutlet weak var lblOutput: UILabel!
     
-    // An Action for the button so we can handle pressing it - it will call getLabels
-    @IBAction func btnPress(_ sender: Any) {
+    @IBAction func doInference(_ sender: Any) {
         getLabels(with: imageView.image!)
     }
-    
-    // We'll have a var to hold all the labels
-    var labeltexts = ""
-    
     // On view did load we only need to initialize the image, so we can do that here
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        imageView.image = UIImage(named:"figure4-1.jpg")
+        imageView.image = UIImage(named:"fig6-1dog.jpg")
     }
-    
+
     // This is called when the user presses the button
     func getLabels(with image: UIImage){
         // Get the image from the UI Image element and set its orientation
@@ -48,9 +44,11 @@ class ViewController: UIViewController {
             self.processResult(from: labels, error: error)
      }
     }
-
+    
     // This gets called by the labeler's callback
     func processResult(from labels: [ImageLabel]?, error: Error?){
+        // String to hold the labels
+        var labeltexts = ""
         // Check that we have valid labels first
         guard let labels = labels else{
             return
@@ -58,10 +56,10 @@ class ViewController: UIViewController {
         // ...and if we do we can iterate through the set to get the description and confidence
         for label in labels{
             let labelText = label.text + " : " + label.confidence.description + "\n"
-            self.labeltexts += labelText
+            labeltexts += labelText
         }
         // And when we're done we can update the UI with the list of labels
-        self.lblOutput.text = self.labeltexts
+        lblOutput.text = labeltexts
     }
 }
 

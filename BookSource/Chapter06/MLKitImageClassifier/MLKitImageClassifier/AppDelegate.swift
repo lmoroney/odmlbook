@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Chapter6ImageLabelling
+//  MLKitImageClassifier
 //
-//  Created by Laurence Moroney on 2/22/21.
+//  Created by Laurence Moroney on 2/28/21.
 //
 
 import UIKit
