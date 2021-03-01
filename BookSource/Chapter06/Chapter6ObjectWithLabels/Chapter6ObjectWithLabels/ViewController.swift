@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             
             guard let cutImageRef: CGImage = theImage?.cgImage?.cropping(to: obj.frame) else {break}
             let croppedImage: UIImage = UIImage(cgImage: cutImageRef)
-            //dummyImageView.image = croppedImage
+
             let visionImage = VisionImage(image: croppedImage)
             visionImage.orientation = croppedImage.imageOrientation
             let options = ImageLabelerOptions()
