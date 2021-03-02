@@ -1,0 +1,90 @@
+PODS:
+  - GoogleDataTransport (8.2.0):
+    - nanopb (~> 2.30907.0)
+  - GoogleMLKit/DigitalInkRecognition (2.0.0):
+    - GoogleMLKit/MLKitCore
+    - MLKitDigitalInkRecognition (~> 1.1.0)
+  - GoogleMLKit/MLKitCore (2.0.0):
+    - MLKitCommon (~> 2.0.0)
+  - GoogleToolboxForMac/DebugUtils (2.3.1):
+    - GoogleToolboxForMac/Defines (= 2.3.1)
+  - GoogleToolboxForMac/Defines (2.3.1)
+  - GoogleToolboxForMac/Logger (2.3.1):
+    - GoogleToolboxForMac/Defines (= 2.3.1)
+  - "GoogleToolboxForMac/NSData+zlib (2.3.1)":
+    - GoogleToolboxForMac/Defines (= 2.3.1)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.3.1)":
+    - GoogleToolboxForMac/DebugUtils (= 2.3.1)
+    - GoogleToolboxForMac/Defines (= 2.3.1)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.3.1)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.3.1)"
+  - GoogleUtilities/Environment (7.2.2):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (7.2.2):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/UserDefaults (7.2.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilitiesComponents (1.0.0):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.5.0)
+  - MLKitCommon (2.0.0):
+    - GoogleDataTransport (~> 8.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - GoogleUtilities/UserDefaults (~> 7.0)
+    - GoogleUtilitiesComponents (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.12)
+  - MLKitDigitalInkRecognition (1.1.0):
+    - MLKitCommon (~> 2.0)
+    - MLKitMDD (~> 1.1)
+    - SSZipArchive (~> 2.1)
+  - MLKitMDD (1.1.0):
+    - MLKitCommon (~> 2.0)
+  - nanopb (2.30907.0):
+    - nanopb/decode (= 2.30907.0)
+    - nanopb/encode (= 2.30907.0)
+  - nanopb/decode (2.30907.0)
+  - nanopb/encode (2.30907.0)
+  - PromisesObjC (1.2.12)
+  - Protobuf (3.14.0)
+  - SSZipArchive (2.2.3)
+
+DEPENDENCIES:
+  - GoogleMLKit/DigitalInkRecognition
+
+SPEC REPOS:
+  trunk:
+    - GoogleDataTransport
+    - GoogleMLKit
+    - GoogleToolboxForMac
+    - GoogleUtilities
+    - GoogleUtilitiesComponents
+    - GTMSessionFetcher
+    - MLKitCommon
+    - MLKitDigitalInkRecognition
+    - MLKitMDD
+    - nanopb
+    - PromisesObjC
+    - Protobuf
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
+  GoogleMLKit: 2a9032170872c4464d516700a04661d6e5b98a77
+  GoogleToolboxForMac: 471e0c05d39506e50e6398f46fa9a12ae0efeff9
+  GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
+  GoogleUtilitiesComponents: a69c0b3b369ba443e988141e75ef49d9010b1c80
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  MLKitCommon: 746a9b06e05a6a5dc9636a8ea376c3145f0a5338
+  MLKitDigitalInkRecognition: 4b30353fdd82f0a52e9d6667eb4c604fedef8778
+  MLKitMDD: ec2a0088bd4c753a587a5e87f982155bb6a439dd
+  nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Protobuf: 0cde852566359049847168e51bd1c690e0f70056
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+
+PODFILE CHECKSUM: 6d3b5b9139d6f19812db4a8f2be48a995761a364
+
+COCOAPODS: 1.10.0
