@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E4BF9C2B2CF106AEFBAA609 /* Pods_MLKitImageClassifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE338648F12EA35C7D45E493 /* Pods_MLKitImageClassifier.framework */; };
+		291221CD25EBEAC400152850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291221CC25EBEAC400152850 /* AppDelegate.swift */; };
+		291221CF25EBEAC400152850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291221CE25EBEAC400152850 /* SceneDelegate.swift */; };
+		291221D125EBEAC400152850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291221D025EBEAC400152850 /* ViewController.swift */; };
+		291221D425EBEAC400152850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291221D225EBEAC400152850 /* Main.storyboard */; };
+		291221D625EBEAC500152850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291221D525EBEAC500152850 /* Assets.xcassets */; };
+		291221D925EBEAC500152850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291221D725EBEAC500152850 /* LaunchScreen.storyboard */; };
+		291221F525EBF55700152850 /* fig6-1dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 291221F425EBF55700152850 /* fig6-1dog.jpg */; };
+		29A1110B25F28AF5003C9E4E /* flowers_model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 29A1110A25F28AF5003C9E4E /* flowers_model.tflite */; };
+		29A1110E25F28B46003C9E4E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A1110D25F28B46003C9E4E /* 1.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		291221C925EBEAC400152850 /* MLKitImageClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLKitImageClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		291221CC25EBEAC400152850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		291221CE25EBEAC400152850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		291221D025EBEAC400152850 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		291221D325EBEAC400152850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		291221D525EBEAC500152850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		291221D825EBEAC500152850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		291221DA25EBEAC500152850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		291221F425EBF55700152850 /* fig6-1dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fig6-1dog.jpg"; sourceTree = "<group>"; };
+		29A1110A25F28AF5003C9E4E /* flowers_model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = flowers_model.tflite; sourceTree = "<group>"; };
+		29A1110D25F28B46003C9E4E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		724B8D93A83718AD9C39EB64 /* Pods-MLKitImageClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLKitImageClassifier.release.xcconfig"; path = "Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier.release.xcconfig"; sourceTree = "<group>"; };
+		DE77791E1E94F720B1FF26A7 /* Pods-MLKitImageClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLKitImageClassifier.debug.xcconfig"; path = "Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier.debug.xcconfig"; sourceTree = "<group>"; };
+		EE338648F12EA35C7D45E493 /* Pods_MLKitImageClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLKitImageClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		291221C625EBEAC400152850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4BF9C2B2CF106AEFBAA609 /* Pods_MLKitImageClassifier.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		291221C025EBEAC400152850 = {
+			isa = PBXGroup;
+			children = (
+				291221CB25EBEAC400152850 /* MLKitImageClassifier */,
+				291221CA25EBEAC400152850 /* Products */,
+				2DF8CACB8637BE178973DB46 /* Pods */,
+				CFABD008BD3EAD4B77D319C5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		291221CA25EBEAC400152850 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				291221C925EBEAC400152850 /* MLKitImageClassifier.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		291221CB25EBEAC400152850 /* MLKitImageClassifier */ = {
+			isa = PBXGroup;
+			children = (
+				29A1110D25F28B46003C9E4E /* 1.jpg */,
+				29A1110A25F28AF5003C9E4E /* flowers_model.tflite */,
+				291221F425EBF55700152850 /* fig6-1dog.jpg */,
+				291221CC25EBEAC400152850 /* AppDelegate.swift */,
+				291221CE25EBEAC400152850 /* SceneDelegate.swift */,
+				291221D025EBEAC400152850 /* ViewController.swift */,
+				291221D225EBEAC400152850 /* Main.storyboard */,
+				291221D525EBEAC500152850 /* Assets.xcassets */,
+				291221D725EBEAC500152850 /* LaunchScreen.storyboard */,
+				291221DA25EBEAC500152850 /* Info.plist */,
+			);
+			path = MLKitImageClassifier;
+			sourceTree = "<group>";
+		};
+		2DF8CACB8637BE178973DB46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE77791E1E94F720B1FF26A7 /* Pods-MLKitImageClassifier.debug.xcconfig */,
+				724B8D93A83718AD9C39EB64 /* Pods-MLKitImageClassifier.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CFABD008BD3EAD4B77D319C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE338648F12EA35C7D45E493 /* Pods_MLKitImageClassifier.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		291221C825EBEAC400152850 /* MLKitImageClassifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 291221DD25EBEAC500152850 /* Build configuration list for PBXNativeTarget "MLKitImageClassifier" */;
+			buildPhases = (
+				29FB94C3FEB5BC68C4250E1E /* [CP] Check Pods Manifest.lock */,
+				291221C525EBEAC400152850 /* Sources */,
+				291221C625EBEAC400152850 /* Frameworks */,
+				291221C725EBEAC400152850 /* Resources */,
+				A2BF623FBD47F0F95DFEF56F /* [CP] Embed Pods Frameworks */,
+				72584B43EA264C76F69B76E8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MLKitImageClassifier;
+			productName = MLKitImageClassifier;
+			productReference = 291221C925EBEAC400152850 /* MLKitImageClassifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		291221C125EBEAC400152850 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					291221C825EBEAC400152850 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 291221C425EBEAC400152850 /* Build configuration list for PBXProject "MLKitImageClassifier" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 291221C025EBEAC400152850;
+			productRefGroup = 291221CA25EBEAC400152850 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				291221C825EBEAC400152850 /* MLKitImageClassifier */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		291221C725EBEAC400152850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				291221F525EBF55700152850 /* fig6-1dog.jpg in Resources */,
+				29A1110B25F28AF5003C9E4E /* flowers_model.tflite in Resources */,
+				291221D925EBEAC500152850 /* LaunchScreen.storyboard in Resources */,
+				29A1110E25F28B46003C9E4E /* 1.jpg in Resources */,
+				291221D625EBEAC500152850 /* Assets.xcassets in Resources */,
+				291221D425EBEAC400152850 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29FB94C3FEB5BC68C4250E1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MLKitImageClassifier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72584B43EA264C76F69B76E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2BF623FBD47F0F95DFEF56F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLKitImageClassifier/Pods-MLKitImageClassifier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		291221C525EBEAC400152850 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				291221D125EBEAC400152850 /* ViewController.swift in Sources */,
+				291221CD25EBEAC400152850 /* AppDelegate.swift in Sources */,
+				291221CF25EBEAC400152850 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		291221D225EBEAC400152850 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				291221D325EBEAC400152850 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		291221D725EBEAC500152850 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				291221D825EBEAC500152850 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		291221DB25EBEAC500152850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		291221DC25EBEAC500152850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		291221DE25EBEAC500152850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE77791E1E94F720B1FF26A7 /* Pods-MLKitImageClassifier.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SYVH3Y259;
+				INFOPLIST_FILE = MLKitImageClassifier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmoroney.odmlbook.MLKitImageClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		291221DF25EBEAC500152850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 724B8D93A83718AD9C39EB64 /* Pods-MLKitImageClassifier.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3SYVH3Y259;
+				INFOPLIST_FILE = MLKitImageClassifier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmoroney.odmlbook.MLKitImageClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		291221C425EBEAC400152850 /* Build configuration list for PBXProject "MLKitImageClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291221DB25EBEAC500152850 /* Debug */,
+				291221DC25EBEAC500152850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		291221DD25EBEAC500152850 /* Build configuration list for PBXNativeTarget "MLKitImageClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291221DE25EBEAC500152850 /* Debug */,
+				291221DF25EBEAC500152850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 291221C125EBEAC400152850 /* Project object */;
+}
