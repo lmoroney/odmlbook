@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         txtOutput = findViewById(R.id.txtOutput)
         customDrawingSurface = findViewById(R.id.customDrawingSurface)
         btnClassify = findViewById(R.id.btnClassify)
+        btnClassify.isEnabled = false
         btnClassify.setOnClickListener {
             val thisInk = customDrawingSurface.getInk()
             recognizer = DigitalInkRecognition.getClient(DigitalInkRecognizerOptions.builder(model!!).build() )
@@ -56,8 +57,14 @@ class MainActivity : AppCompatActivity() {
     fun initializeRecognition(){
         val modelIdentifier: DigitalInkRecognitionModelIdentifier? =
             DigitalInkRecognitionModelIdentifier.fromLanguageTag("en-US")
+        // Use "zh-Hani-CN" for Chinese!
         model = DigitalInkRecognitionModel.builder(modelIdentifier!!).build()
-        remoteModelManager.download(model!!, DownloadConditions.Builder().build())
+        remoteModelManager.download(model!!, DownloadConditions.Builder().build()).addOnSuccessListener {
+            Log.i("InkSample", "Model Downloaded")
+            btnClassify.isEnabled = true
+        }. addOnFailureListener {  e: Exception ->
+            Log.e("InkSample", "Model failed $e")
+        }
     }
 
 
