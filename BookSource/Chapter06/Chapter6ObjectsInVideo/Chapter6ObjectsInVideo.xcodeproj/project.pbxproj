@@ -15,6 +15,7 @@
 		2982B18025E7FB1700E25668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2982B17E25E7FB1700E25668 /* LaunchScreen.storyboard */; };
 		2982B18925E7FB9200E25668 /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2982B18825E7FB9200E25668 /* VisionObjectRecognitionViewController.swift */; };
 		2982B18D25E7FBCA00E25668 /* LICENSE-FromApple.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2982B18C25E7FBCA00E25668 /* LICENSE-FromApple.txt */; };
+		298D6B4A26330F45005D539E /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298D6B4926330F45005D539E /* UIUtilities.swift */; };
 		51481BFAE96D54B3586BCBF7 /* Pods_Chapter6ObjectsInVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4CF1C120A6F69CA49ABCA6 /* Pods_Chapter6ObjectsInVideo.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		2982B18125E7FB1700E25668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2982B18825E7FB9200E25668 /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
 		2982B18C25E7FBCA00E25668 /* LICENSE-FromApple.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LICENSE-FromApple.txt"; sourceTree = "<group>"; };
+		298D6B4926330F45005D539E /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		9E0EF04D1610694FB0D4F7C7 /* Pods-Chapter6ObjectsInVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chapter6ObjectsInVideo.release.xcconfig"; path = "Target Support Files/Pods-Chapter6ObjectsInVideo/Pods-Chapter6ObjectsInVideo.release.xcconfig"; sourceTree = "<group>"; };
 		D73EE096E357C9E76E8C8A57 /* Pods-Chapter6ObjectsInVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chapter6ObjectsInVideo.debug.xcconfig"; path = "Target Support Files/Pods-Chapter6ObjectsInVideo/Pods-Chapter6ObjectsInVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		EC4CF1C120A6F69CA49ABCA6 /* Pods_Chapter6ObjectsInVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chapter6ObjectsInVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				2982B17C25E7FB1700E25668 /* Assets.xcassets */,
 				2982B17E25E7FB1700E25668 /* LaunchScreen.storyboard */,
 				2982B18125E7FB1700E25668 /* Info.plist */,
+				298D6B4926330F45005D539E /* UIUtilities.swift */,
 			);
 			path = Chapter6ObjectsInVideo;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				2982B18925E7FB9200E25668 /* VisionObjectRecognitionViewController.swift in Sources */,
 				2982B17425E7FB1500E25668 /* AppDelegate.swift in Sources */,
 				2982B17625E7FB1500E25668 /* SceneDelegate.swift in Sources */,
+				298D6B4A26330F45005D539E /* UIUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

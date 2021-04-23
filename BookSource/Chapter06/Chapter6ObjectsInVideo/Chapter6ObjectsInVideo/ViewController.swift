@@ -15,6 +15,7 @@ import Vision
 import MLKitVision
 import MLKitObjectDetection
 
+
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak private var previewView: UIView!
     private let session = AVCaptureSession()
@@ -110,16 +111,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // print("frame dropped")
     }
     
-    func drawMLKitResults(boundingBox: CGRect, label: String, confidence: Float) {
+    func drawMLKitResults(boundingBox: CGRect, imageWidth: CGFloat, imageHeight: CGFloat,  label: String) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         detectionOverlay.sublayers = nil // remove all the old recognized objects
-        let shapeLayer = self.createRoundedRectLayerWithBounds(boundingBox)
-        let textLayer = self.createTextSubLayerInBounds(boundingBox,
-                                                        identifier: label,
-                                                        confidence: confidence)
-        shapeLayer.addSublayer(textLayer)
-        detectionOverlay.addSublayer(shapeLayer)
+        //let shapeLayer = self.createRoundedRectLayerWithBounds(boundingBox, imageWidth: imageWidth, imageHeight: imageHeight)
+        //let textLayer = self.createTextSubLayerInBounds(boundingBox,identifier: label)
+        //shapeLayer.addSublayer(textLayer)
+        //detectionOverlay.addSublayer(shapeLayer)
+        self.createRoundedRectLayerWithBounds(boundingBox, imageWidth: imageWidth, imageHeight: imageHeight)
         self.updateLayerGeometry()
         CATransaction.commit()
     }
@@ -135,19 +135,27 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+          print("Failed to get image buffer from sample buffer.")
+          return
+        }
         let image = VisionImage(buffer: sampleBuffer)
+        let imageWidth = CGFloat(CVPixelBufferGetWidth(imageBuffer))
+        let imageHeight = CGFloat(CVPixelBufferGetHeight(imageBuffer))
+        let orientation = UIUtilities.imageOrientation(
+          fromDevicePosition: .back
+        )
+
+        image.orientation = orientation
         objectDetector.process(image) {objects, error in
             guard error == nil else {
                 self.clearMLKitResults()
                 return
             }
             for object in objects!{
-                if(object.labels.count>0){
-                    let frame = object.frame
-                    self.drawMLKitResults(boundingBox: frame, label: object.labels[0].text, confidence: object.labels[0].confidence)
-                } else {
-                    self.clearMLKitResults()
-                }
+                let frame = object.frame
+                let label = object.trackingID?.stringValue
+                self.drawMLKitResults(boundingBox: frame, imageWidth: imageWidth, imageHeight: imageHeight, label: label!)
             }
         }
     }
@@ -187,10 +195,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
     }
     
-    func createTextSubLayerInBounds(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {
+    func createTextSubLayerInBounds(_ bounds: CGRect, identifier: String) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
-        let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)\nConfidence:  %.2f", confidence))
+        let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)"))
         let largeFont = UIFont(name: "Helvetica", size: 24.0)!
         formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: identifier.count))
         textLayer.string = formattedString
@@ -205,20 +213,35 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         return textLayer
     }
     
-    func createRoundedRectLayerWithBounds(_ bounds: CGRect) -> CALayer {
-        let shapeLayer = CALayer()
-        shapeLayer.bounds = bounds
-        shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        shapeLayer.name = "Found Object"
-        shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 0.2, 0.4])
-        shapeLayer.cornerRadius = 7
-        return shapeLayer
+    func createRoundedRectLayerWithBounds(_ bounds: CGRect, imageWidth: CGFloat, imageHeight: CGFloat) {
+        let normalizedRect = CGRect(
+          x: bounds.origin.x / imageWidth,
+          y: bounds.origin.y / imageHeight,
+          width: bounds.size.width / imageWidth,
+          height: bounds.size.height / imageHeight
+        )
+        let standardizedRect = previewLayer.layerRectConverted(
+          fromMetadataOutputRect: normalizedRect
+        ).standardized
+        //let shapeLayer = CALayer()
+        //shapeLayer.bounds = standardizedRect
+        //shapeLayer.contentsRect = standardizedRect
+        //shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
+        //shapeLayer.position = CGPoint(x: bounds.origin.x, y:bounds.origin.y)
+        
+        //shapeLayer.name = "Found Object"
+        //shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 0.2, 0.4])
+        //shapeLayer.cornerRadius = 7
+        //return shapeLayer
+        UIUtilities.addRectangle(standardizedRect, to: detectionOverlay, color: UIColor.yellow)
     }
     
     required init?(coder: NSCoder) {
         // ML Kit
         options = ObjectDetectorOptions()
-        options.shouldEnableClassification = true
+        options.shouldEnableClassification = false
+        options.shouldEnableMultipleObjects = true
+        options.detectorMode = .stream
         objectDetector = MLKitObjectDetection.ObjectDetector.objectDetector(options: options)
         super.init(coder: coder)
     }
