@@ -10,19 +10,31 @@ import MLKitEntityExtraction
 
 class ViewController: UIViewController, UITextViewDelegate {
 
+    var modelAvailable = false
     var extractorAvailable = false
     var contentString: String = ""
     var entityExtractor = EntityExtractor.entityExtractor(options: EntityExtractorOptions(modelIdentifier: EntityExtractionModelIdentifier.english))
     @IBOutlet weak var txtInput: UITextView!
     @IBOutlet weak var txtOutput: UILabel!
     @IBAction func doExtraction(_ sender: Any) {
-        extractEntities()
+        if(modelAvailable){
+            extractEntities()
+        } else {
+            txtOutput.text = "Model not yet downloaded, please try later."
+        }
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        entityExtractor.downloadModelIfNeeded(completion: { error in
+            guard error == nil else {
+                self.txtOutput.text = "Error downloading model, please restart app."
+                return
+            }
+            self.modelAvailable = true
+        })
         txtInput.delegate = self
         contentString = "Hi Nizhoni, I'll be at 19 Fifth Avenue in San Jose tomorrow at 5PM where we can discuss my book - 978-1492078197, if you can reach me, call me at 555 213 2121 or email lmoroney@area51.net"
         txtInput.text = contentString
@@ -48,9 +60,11 @@ class ViewController: UIViewController, UITextViewDelegate {
                     //print(annotation)
                     for entity in annotation.entities{
                         strOutput += entity.entityType.rawValue + " : "
+
                         let startLoc = annotation.range.location
                         let endLoc = startLoc + annotation.range.length - 1
                         let mySubString = strText![startLoc...endLoc]
+                        
                         strOutput += mySubString + "\n"
                     }
                 }
@@ -80,3 +94,4 @@ extension String {
     return String(self[startIndex...endIndex])
   }
 }
+

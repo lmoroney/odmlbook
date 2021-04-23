@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 return
             }
             print(result.status)
-            var strSuggestedReplies = "Suggested Replies:"
+            var strSuggestedReplies = "Suggested Replies:\n"
             if (result.status == .notSupportedLanguage) {
                 // The conversation's language isn't supported, so
                 // the result doesn't contain any suggestions.
