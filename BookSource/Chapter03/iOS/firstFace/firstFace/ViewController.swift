@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         self.processResult(from: features, error: error)
       }
     }
-    /// An overlay view that displays detection annotations.
+    /// 검출된 바운딩박스를 그리기 위한 오버레이 뷰
     private lazy var annotationOverlayView: UIView = {
       precondition(isViewLoaded)
       let annotationOverlayView = UIView(frame: .zero)
@@ -81,8 +81,9 @@ class ViewController: UIViewController {
         (imageViewAspectRatio > imageAspectRatio)
         ? imageViewHeight / imageHeight : imageViewWidth / imageWidth
 
-      // Image view's `contentMode` is `scaleAspectFit`, which scales the image to fit the size of the
-      // image view by maintaining the aspect ratio. Multiple by `scale` to get image's original size.
+      // 이미지뷰의 `contentMode`는 `scaleAspectFit`로 설됭되어 있습니다.
+      // 이 설정은 이미지의 가로 세로 비율은 유지하면서 이미지의 크기를 이미지뷰 크기에 맞춰 조정해라는 옵션입니다.
+      // 이미지의 원본 크기를 가져오기위해 `scale`을 곱합니다.
       let scaledImageWidth = imageWidth * scale
       let scaledImageHeight = imageHeight * scale
       let xValue = (imageViewWidth - scaledImageWidth) / CGFloat(2.0)
